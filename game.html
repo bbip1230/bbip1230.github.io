@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Star Wars Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Star Wars-esque font -->
+</head>
+<body>
+    <!-- Star background overlay -->
+    <div class="starfield"></div>
+
+    <header>
+        <h1>Welcome to My Galactic Portfolio!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="aspirations.html">Aspirations</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="game-section">
+            <h2>Star Wars Blasters Game</h2>
+            <p>Blast the enemy ships before they escape! Tap on the ships as they appear to score points.</p>
+            <div id="game-container">
+                <div id="score">Score: 0</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bipasha Bipin. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const gameContainer = document.getElementById('game-container');
+            let score = 0;
+            const scoreDisplay = document.getElementById('score');
+
+            function createEnemy() {
+                const enemy = document.createElement('div');
+                enemy.className = 'enemy';
+                enemy.style.top = `${Math.random() * 100}%`;
+                enemy.style.left = `${Math.random() * 100}%`;
+                gameContainer.appendChild(enemy);
+
+                enemy.addEventListener('click', () => {
+                    score += 1;
+                    scoreDisplay.textContent = `Score: ${score}`;
+                    blastEffect(enemy);
+                    setTimeout(() => enemy.remove(), 500);  // Remove enemy after the animation
+                });
+            }
+
+            function blastEffect(element) {
+                const blast = document.createElement('div');
+                blast.className = 'blast';
+                blast.style.top = element.style.top;
+                blast.style.left = element.style.left;
+                gameContainer.appendChild(blast);
+                setTimeout(() => blast.remove(), 500);  // Remove blast after the animation
+            }
+
+            // Create enemies periodically
+            setInterval(createEnemy, 1000);  // Adjust interval as needed
+        });
+    </script>
+</body>
+</html>

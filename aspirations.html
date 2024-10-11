@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Aspirations</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Galactic font -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="aspirations.html">Aspirations</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Star background overlay -->
+    <div class="starfield"></div>
+
+    <!-- Star Wars-inspired opening crawl effect -->
+    <main>
+        <section id="aspirations" class="crawl">
+            <div class="fade"></div>
+            <h2>Aspirations</h2>
+            <div class="crawl-content">
+                <p>In a galaxy of code and creativity, one developer, by the name of Bipasha Bipin, embarks on a journey to push the boundaries of what technology can achieve. Guided by the light of knowledge and the thrill of discovery, I aim to create solutions that bring balance to the world of tech.</p>
+                <p>As a developer, I see myself as an explorer navigating the infinite universe of technology, driven by curiosity and the desire to make an impact. The journey is long, and the challenges are many, but with resilience and a lightsaber-like focus, I aspire to venture into the unknown and innovate for the greater good.</p>
+            </div>
+            <!-- Cool glowing button linking to the resume -->
+            <a href="resume.html" class="explore-button">Explore My Journey</a>
+        </section>
+        <img src="saturn.jpg" alt="Saturn" class="saturn-image">>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bipasha Bipin. All rights reserved.</p>
+    </footer>
+
+    <!-- Adding Starfield Animation -->
+    <script>
+        // Starfield effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const starfield = document.querySelector(".starfield");
+            for (let i = 1; i < 150; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                starfield.appendChild(star);
+            }
+        });
+    </script>
+</body>
+</html>

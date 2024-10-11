@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+<body>
+    <div class="starfield"></div>
+
+    <header>
+        <h1>Welcome to My Galactic Portfolio!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="aspirations.html">Aspirations</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <img src="jukebox.jpeg" alt="Jukebox">
+                    <p>JukeBox: SwuiftUI</p>
+                </div>
+                <div class="project">
+                    <img src="foodmood.jpeg" alt="FoodMood">
+                    <p>FoodMood: SwiftUI</p>
+                </div>
+                <div class="project">
+                    <img src="adoption.png" alt="Adoption">
+                    <p>Cat Adoption Website</p>
+                </div>
+                <div class="project">
+                    <img src="Photo-Collage-website.jpeg" alt="Photo-Collage-website">
+                    <p>Photobooth Collage </p>
+                </div>
+                <div class="project">
+                    <img src="Superhero.jpeg" alt="Superhero">
+                    <p>SuperHero Care Hackathon</p>
+                </div>
+                <div class="project">
+                    <img src="calendar.jpeg" alt="calendar app">
+                    <p>Calendar App</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bipasha Bipin. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const starfield = document.querySelector(".starfield");
+            for (let i = 0; i < 300; i++) { 
+                const star = document.createElement("div");
+                star.className = "star";
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.width = `${Math.random() * 2 + 1}px`; 
+                star.style.height = star.style.width;
+                star.style.opacity = Math.random() * 0.8 + 0.2; 
+                starfield.appendChild(star);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #FFE81F;
+    background-color: #000;
+    /* Remove overflow: hidden here to allow scrolling */
+}
+
+header, footer {
+    text-align: center;
+    background-color: #111;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #FFE81F;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #FFE81F;
+    text-decoration: none;
+}
+
+/* Starfield Styling */
+.starfield {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden; /* Keep overflow hidden on the starfield only */
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #FFF;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+/* Star Wars Crawl Effect */
+#aspirations.crawl {
+    perspective: 300px;
+    text-align: center;
+    color: #FFE81F;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#aspirations h2 {
+    display: none; /* Hidden to make room for crawl effect */
+}
+
+.crawl-content {
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #FFE81F;
+    max-width: 90vw; /* Set max-width to 90% of the viewport */
+    margin: 0 auto;
+    animation: crawl 15s linear infinite; /* Change 30s to 15s for faster scroll */
+}
+
+@keyframes crawl {
+    0% {
+        transform: rotateX(20deg) translateY(100vh);
+    }
+    100% {
+        transform: rotateX(20deg) translateY(-100vh);
+    }
+}
+
+.fade {
+    position: absolute;
+    bottom: 0;
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(transparent, black);
+}
+
+/* Button Styling */
+.explore-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: #FFE81F;
+    border: 2px solid #FFE81F;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #FFE81F;
+    color: #000;
+}
+
+/* Projects Section */
+#projects {
+    text-align: center;
+    color: #FFE81F;
+    padding: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 1.5rem; /* Space between items */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project {
+    background-color: #222;
+    border: 2px solid #FFE81F;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    color: #FFE81F;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05); 
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #FFE81F;
+}
+
+/* Game Section */
+#game-section {
+    text-align: center;
+    color: #FFE81F;
+    padding: 2rem;
+}
+
+#game-container {
+    position: relative;
+    width: 80vw;
+    height: 70vh;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #FFE81F;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#score {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: #FFE81F;
+}
+
+/* Enemy styling */
+.enemy {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.enemy:active {
+    transform: scale(0.8);
+}
+
+@keyframes blast {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.blast {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: yellow; /* Adjust color as needed */
+    border-radius: 50%;
+    animation: blast 0.5s forwards;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #FFE81F;
+}
